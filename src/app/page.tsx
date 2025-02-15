@@ -1,101 +1,102 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { IconCalendar } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
+
+type Tool = {
+  icon: string;
+  title: string;
+  description: string;
+  date: string;
+  url: string;
+};
+
+const tools: Tool[] = [
+  {
+    icon: "/discord-time-tag.svg",
+    title: "Discord Time Tag",
+    description:
+      "Generate a discord time tag with this simple yet powerful tool",
+    date: "September 2022",
+    url: "/discord-time-tag",
+  },
+  {
+    icon: "/svg-length.svg",
+    title: "Svg length calculator",
+    description: "Check the length of any svg path directly in your browser",
+    date: "February 2025",
+    url: "/svg-length",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main className="relative min-h-screen ">
+      {/* Main Content */}
+      <div className="relative z-10 p-8 pt-12 md:pt-40 max-w-screen-lg mx-auto">
+        {/* Header Section */}
+        <header className="flex flex-col md:flex-row items-center justify-between mb-16">
+          <div className="order-2 md:order-1">
+            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black mb-2 flex flex-row flex-wrap gap-4 md:flex-col items-start justify-center">
+              <span className="text-navy-900">Chunky&apos;s</span>
+              <span className="bg-gradient-to-r from-primary-500 to-[#E9190F] text-transparent bg-clip-text">
+                Dank
+              </span>
+              <span className="text-navy-900">Tools</span>
+            </h1>
+            <p className="text-gray-600">
+              A collection of chunkydotdev&apos;s free and open-source tools.
+            </p>
+          </div>
+          <div className="relative w-80 h-80 xl:w-96 xl:h-96 flex-shrink-0 order-1 md:order-2">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/chunky.svg"
+              alt="Chunky's Tools Logo"
+              fill
+              className="object-contain"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          </div>
+        </header>
+
+        {/* Tools Section */}
+        <section>
+          <h2 className="mb-6 font-bold text-zinc-500">Tools</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tools.map((tool) => (
+              <Link href={tool.url} key={tool.title}>
+                <Card
+                  key={tool.title}
+                  className="hover:shadow-md transition-shadow"
+                >
+                  <CardContent className="pt-6">
+                    <div className="flex flex-col space-y-4">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                          <Image
+                            src={tool.icon}
+                            alt={`${tool.title} icon`}
+                            width={24}
+                            height={24}
+                            className="object-contain w-10 h-10"
+                          />
+                        </div>
+                        <h3 className="font-semibold">{tool.title}</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        {tool.description}
+                      </p>
+                      <time className="text-sm text-muted-foreground flex items-center gap-2">
+                        <IconCalendar className="w-4 h-4" />
+                        {tool.date}
+                      </time>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }

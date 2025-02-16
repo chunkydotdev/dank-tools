@@ -1,10 +1,10 @@
 "use client";
 
+import { timeFormats } from "@/app/discord-time-tag/constants";
+import { DateTimeInputs } from "@/components/discord-time-tag/date-time-inputs";
+import { TimeFormatList } from "@/components/discord-time-tag/time-format-list";
 import { format } from "date-fns";
 import { useState } from "react";
-import { DateTimeInputs } from "./components/date-time-inputs";
-import { TimeFormatList } from "./components/time-format-list";
-import { timeFormats } from "./constants";
 
 export default function DiscordTimeTag() {
   const [date, setDate] = useState(format(new Date(), "yyyy-MM-dd"));

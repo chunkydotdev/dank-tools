@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { IconCheck } from "@tabler/icons-react";
-import { TimeFormat } from "../types";
+import { TimeFormat } from "../../app/discord-time-tag/types";
 
 type TimeFormatListProps = {
   timeFormats: TimeFormat[];
@@ -21,7 +21,7 @@ export function TimeFormatList({
     <div className="space-y-4">
       {timeFormats.map((format, index) => (
         <div
-          key={format.label}
+          key={format.format}
           className="flex items-center justify-between px-4 py-2 bg-white/10 transition-colors hover:bg-white/20"
         >
           <div className="space-y-1 text-white">

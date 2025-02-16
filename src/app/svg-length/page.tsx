@@ -1,8 +1,8 @@
 "use client";
 
+import { PathList } from "@/components/svg-length/path-list";
+import { SVGUpload } from "@/components/svg-length/svg-upload";
 import { useState } from "react";
-import { PathList } from "./components/path-list";
-import { SVGUpload } from "./components/svg-upload";
 
 function calculatePathLengths(svgString: string) {
   const parser = new DOMParser();

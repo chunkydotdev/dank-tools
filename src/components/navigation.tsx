@@ -122,7 +122,10 @@ export function Navigation() {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className="fixed inset-0 bg-white dark:bg-black md:hidden"
+              className={cn(
+                "fixed inset-0 bg-white md:hidden",
+                isDark && "bg-black"
+              )}
             >
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center h-16 px-4">

@@ -44,7 +44,7 @@ export default function Home() {
               </span>
               <span className="text-navy-900">Tools</span>
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-center md:text-left">
               A collection of chunkydotdev&apos;s free and open-source tools.
             </p>
           </div>

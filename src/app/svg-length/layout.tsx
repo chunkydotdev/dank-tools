@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       "Calculate the length of SVG paths with this simple yet powerful tool",
     images: [
       {
-        url: "/og/svg-length.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "SVG Length Calculator",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "SVG Length Calculator",
     description:
       "Calculate the length of SVG paths with this simple yet powerful tool",
-    images: ["/og/svg-length.png"],
+    images: ["/og-image.png"],
   },
 };
 

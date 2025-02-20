@@ -1,7 +1,8 @@
 import Background from "@/components/background";
 import { Navigation } from "@/components/navigation";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -11,16 +12,65 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Chunky's Dank Tools",
-  description: "A collection of chunkydotdev's free and open-source tools.",
+  title: {
+    default: "Dank Tools - Developer Utilities",
+    template: "%s | Dank Tools",
+  },
+  description:
+    "A collection of free developer tools and utilities to help streamline your workflow. Featuring SVG path length calculator, Discord timestamp generator, and more.",
+  keywords: [
+    "developer tools",
+    "svg path length",
+    "discord timestamp",
+    "web tools",
+    "developer utilities",
+    "svg calculator",
+    "discord time tag",
+  ],
+  authors: [
+    {
+      name: "chunky.dev",
+      url: "https://github.com/chunkydotdev",
+    },
+  ],
+  creator: "chunky.dev",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://dank.tools",
+    siteName: "Dank Tools",
+    title: "Dank Tools - Developer Utilities",
+    description:
+      "A collection of free developer tools and utilities to help streamline your workflow.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Dank Tools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dank Tools - Developer Utilities",
+    description:
+      "A collection of free developer tools and utilities to help streamline your workflow.",
+    images: ["/og-image.png"],
+    creator: "@devjunghard",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: {
-      url: "/chunky.svg",
-      type: "image/svg+xml",
+      url: "/chunky.png",
+      type: "image/png",
     },
     apple: {
-      url: "/chunky.svg",
-      type: "image/svg+xml",
+      url: "/chunky.png",
+      type: "image/png",
     },
   },
 };
@@ -36,6 +86,12 @@ export default function RootLayout({
         <Background />
         <Navigation />
         {children}
+        <Script
+          defer
+          data-domain="dank.tools"
+          src="https://plausible.chunky.dev/js/script.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

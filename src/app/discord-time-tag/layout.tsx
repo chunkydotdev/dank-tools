@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       "Generate Discord timestamps that show the correct time for every user",
     images: [
       {
-        url: "/og/discord-time-tag.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Discord Time Tag Generator",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Discord Time Tag Generator",
     description:
       "Generate Discord timestamps that show the correct time for every user",
-    images: ["/og/discord-time-tag.png"],
+    images: ["/og-image.png"],
   },
 };
 

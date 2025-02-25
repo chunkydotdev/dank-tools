@@ -92,6 +92,12 @@ export default function RootLayout({
           src="https://plausible.chunky.dev/js/script.js"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://feedback.happypanda.ai/happypanda.js"
+          data-project-id="679296c87be9d598b88e5321"
+          data-token="63efc20e8d2378af9261776494006f967349ff2ef9db1df9a2243b86132cc9aa"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

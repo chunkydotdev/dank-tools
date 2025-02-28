@@ -82,7 +82,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans`}>
+      <body className={`relative ${poppins.variable} font-sans`}>
         <Background />
         <Navigation />
         {children}

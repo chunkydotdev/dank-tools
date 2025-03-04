@@ -10,8 +10,8 @@ export const routes = [
     dark: true,
   },
   {
-    name: "SVG Length",
-    href: "/svg-length",
+    name: "SVG Path Length Calculator",
+    href: "/svg-path-length-calculator",
     dark: false,
   },
 ];

@@ -86,22 +86,24 @@ export function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
-            {routes.map((item) => {
-              const isActive = currentPath?.href === item.href;
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                    textColor,
-                    isActive ? activeTextColor : hoverTextColor
-                  )}
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
+            {routes
+              .filter((route) => route.name !== "Home")
+              .map((item) => {
+                const isActive = currentPath?.href === item.href;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                      textColor,
+                      isActive ? activeTextColor : hoverTextColor
+                    )}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -156,28 +158,30 @@ export function Navigation() {
                   </motion.button>
                 </div>
                 <div className="flex flex-col items-center justify-center flex-1 space-y-6">
-                  {routes.map((item, i) => {
-                    const isActive = currentPath?.href === item.href;
-                    return (
-                      <motion.div
-                        key={item.name}
-                        custom={i}
-                        variants={menuItemVariants}
-                      >
-                        <Link
-                          href={item.href}
-                          className={cn(
-                            "px-3 py-2 text-lg font-medium rounded-md transition-colors",
-                            textColor,
-                            isActive ? activeTextColor : hoverTextColor
-                          )}
-                          onClick={() => setIsMenuOpen(false)}
+                  {routes
+                    .filter((route) => route.name !== "Home")
+                    .map((item, i) => {
+                      const isActive = currentPath?.href === item.href;
+                      return (
+                        <motion.div
+                          key={item.name}
+                          custom={i}
+                          variants={menuItemVariants}
                         >
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
+                          <Link
+                            href={item.href}
+                            className={cn(
+                              "px-3 py-2 text-lg font-medium rounded-md transition-colors",
+                              textColor,
+                              isActive ? activeTextColor : hoverTextColor
+                            )}
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        </motion.div>
+                      );
+                    })}
                 </div>
               </div>
             </motion.div>

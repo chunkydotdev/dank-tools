@@ -25,7 +25,7 @@ const tools: Tool[] = [
     title: "Svg length calculator",
     description: "Check the length of any svg path directly in your browser",
     date: "February 2025",
-    url: "/svg-length",
+    url: "/svg-path-length-calculator",
   },
 ];
 

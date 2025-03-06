@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { routes } from "@/lib/routes";
 import { IconCalendar } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,14 +19,21 @@ const tools: Tool[] = [
     description:
       "Generate a discord time tag with this simple yet powerful tool",
     date: "September 2022",
-    url: "/discord-time-tag",
+    url: routes.discordTimeTag.href,
   },
   {
     icon: "/svg-length.svg",
     title: "Svg length calculator",
     description: "Check the length of any svg path directly in your browser",
     date: "February 2025",
-    url: "/svg-path-length-calculator",
+    url: routes.svgPathLengthCalculator.href,
+  },
+  {
+    icon: "/polls.svg",
+    title: "Simple polls",
+    description: "Create simple shareable polls with this awesome tool",
+    date: "March 2025",
+    url: routes.simplePoll.href,
   },
 ];
 

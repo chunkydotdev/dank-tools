@@ -3,6 +3,7 @@ import { Navigation } from "@/components/navigation";
 import { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -98,6 +99,7 @@ export default function RootLayout({
           data-token="63efc20e8d2378af9261776494006f967349ff2ef9db1df9a2243b86132cc9aa"
           strategy="afterInteractive"
         />
+        <Toaster />
       </body>
     </html>
   );

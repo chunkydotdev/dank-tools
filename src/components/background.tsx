@@ -10,7 +10,7 @@ const Background = () => {
   return (
     <div
       className={cn(
-        "absolute -left-8 -top-8 right-0 bottom-0 z-0 pointer-events-none",
+        "absolute -left-8 -top-8 right-0 bottom-0 z-0 pointer-events-none bg-slate-50",
         isDark && "bg-[#2D2F33]"
       )}
       style={{

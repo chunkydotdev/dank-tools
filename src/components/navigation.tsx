@@ -1,7 +1,7 @@
 "use client";
 
 import { useCurrentPath } from "@/hooks/useCurrentPath";
-import { routes } from "@/lib/routes";
+import { getToolRoutes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -46,12 +46,15 @@ const menuItemVariants = {
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isToolsOpen, setIsToolsOpen] = useState(false);
   const currentPath = useCurrentPath();
 
   const isDark = currentPath?.dark;
   const textColor = isDark ? "text-zinc-400" : "text-zinc-500";
   const activeTextColor = isDark ? "text-white" : "text-zinc-900";
   const hoverTextColor = isDark ? "hover:text-white" : "hover:text-black";
+
+  const tools = getToolRoutes();
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -86,24 +89,54 @@ export function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
-            {routes
-              .filter((route) => route.name !== "Home")
-              .map((item) => {
-                const isActive = currentPath?.href === item.href;
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={cn(
-                      "inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                      textColor,
-                      isActive ? activeTextColor : hoverTextColor
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsToolsOpen(true)}
+              onMouseLeave={() => setIsToolsOpen(false)}
+            >
+              <button
+                className={cn(
+                  "inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                  textColor,
+                  isToolsOpen ? activeTextColor : hoverTextColor
+                )}
+              >
+                Tools
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {isToolsOpen && (
+                <div className="absolute left-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <div className="py-1" role="menu">
+                    {tools.map((tool) => (
+                      <Link
+                        key={tool.name}
+                        href={tool.href}
+                        className={cn(
+                          "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
+                          currentPath?.href === tool.href && "font-bold"
+                        )}
+                        role="menuitem"
+                      >
+                        {tool.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -158,30 +191,28 @@ export function Navigation() {
                   </motion.button>
                 </div>
                 <div className="flex flex-col items-center justify-center flex-1 space-y-6">
-                  {routes
-                    .filter((route) => route.name !== "Home")
-                    .map((item, i) => {
-                      const isActive = currentPath?.href === item.href;
-                      return (
-                        <motion.div
-                          key={item.name}
-                          custom={i}
-                          variants={menuItemVariants}
+                  {tools.map((item, i) => {
+                    const isActive = currentPath?.href === item.href;
+                    return (
+                      <motion.div
+                        key={item.name}
+                        custom={i}
+                        variants={menuItemVariants}
+                      >
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            "px-3 py-2 text-lg font-medium rounded-md transition-colors",
+                            textColor,
+                            isActive ? activeTextColor : hoverTextColor
+                          )}
+                          onClick={() => setIsMenuOpen(false)}
                         >
-                          <Link
-                            href={item.href}
-                            className={cn(
-                              "px-3 py-2 text-lg font-medium rounded-md transition-colors",
-                              textColor,
-                              isActive ? activeTextColor : hoverTextColor
-                            )}
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        </motion.div>
-                      );
-                    })}
+                          {item.name}
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>

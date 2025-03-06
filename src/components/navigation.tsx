@@ -118,7 +118,7 @@ export function Navigation() {
               </button>
 
               {isToolsOpen && (
-                <div className="absolute left-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                <div className="absolute right-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                   <div className="py-1" role="menu">
                     {tools.map((tool) => (
                       <Link

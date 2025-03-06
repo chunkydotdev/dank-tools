@@ -1,5 +1,6 @@
 "use client";
 
+import { apiRoutes } from "@/lib/api-routes";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "../ui/button";
@@ -33,7 +34,7 @@ export function CreatePollForm() {
 
     try {
       const combinedDateTime = new Date(`${endDate}T${endTime}`);
-      const response = await fetch("http://localhost:3001/api/polls", {
+      const response = await fetch(apiRoutes.polls, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

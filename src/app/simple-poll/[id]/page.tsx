@@ -4,6 +4,7 @@ import { PollOptions } from "@/components/poll/poll-options";
 import { PollStatus } from "@/components/poll/poll-status";
 import { SharePoll } from "@/components/poll/share-poll";
 import { Poll } from "@/components/poll/types";
+import { Button } from "@/components/ui/button";
 import { apiRoutes } from "@/lib/api-routes";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
@@ -74,13 +75,7 @@ export default function PollPage() {
       <div className="relative min-h-screen z-10 p-8 space-y-8 pt-24 max-w-screen-sm mx-auto">
         <div className="space-y-2">
           <div className="flex justify-between items-baseline">
-            <h1 className="text-2xl font-bold">{poll.question}</h1>
-            <Link
-              href={`/simple-poll/${poll.id}/result`}
-              className="text-sm text-primary-500 hover:underline"
-            >
-              View Results
-            </Link>
+            <h1 className="text-md font-medium">{poll.question}</h1>
           </div>
           <PollStatus endDate={poll.endDate} isExpired={isExpired} />
         </div>
@@ -108,15 +103,24 @@ export default function PollPage() {
               </div>
             )}
 
-            <button
+            <Button
               onClick={submitVote}
               disabled={
                 !selectedOption || (poll.requireVoterName && !voterName.trim())
               }
-              className="mt-6 w-full py-2 bg-primary-500 text-white rounded hover:bg-primary-600 disabled:bg-gray-300 transition-colors"
+              className="w-full"
             >
               Submit Vote
-            </button>
+            </Button>
+
+            <div className="w-full flex items-center justify-center gap-2">
+              <Link
+                href={`/simple-poll/${poll.id}/result`}
+                className="text-sm text-primary-500 hover:underline"
+              >
+                View Results
+              </Link>
+            </div>
           </>
         )}
 

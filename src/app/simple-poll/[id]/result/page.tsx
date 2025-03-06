@@ -49,7 +49,7 @@ export default function PollResultPage() {
     <main className="relative">
       <div className="relative min-h-screen z-10 p-8 space-y-8 pt-24 max-w-screen-sm mx-auto">
         <div className="space-y-2">
-          <h1 className="text-2xl font-bold">{poll.question}</h1>
+          <h1 className="text-md font-medium">{poll.question}</h1>
           <PollStatus endDate={poll.endDate} isExpired={isExpired} />
         </div>
 

@@ -15,11 +15,11 @@ type Tool = {
 const tools: Tool[] = [
   {
     icon: "/discord-time-tag.svg",
-    title: "Discord Time Tag",
+    title: "Discord Timestamp",
     description:
-      "Generate a discord time tag with this simple yet powerful tool",
+      "Generate a discord timestamp with this simple yet powerful tool",
     date: "September 2022",
-    url: routes.discordTimeTag.href,
+    url: routes.discordTimestamp.href,
   },
   {
     icon: "/svg-length.svg",

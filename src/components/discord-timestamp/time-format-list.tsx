@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { IconCheck } from "@tabler/icons-react";
-import { TimeFormat } from "../../app/discord-time-tag/types";
+import { TimeFormat } from "../../app/discord-timestamp/types";
 
 type TimeFormatListProps = {
   timeFormats: TimeFormat[];

@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         destination: '/svg-path-length-calculator',
         permanent: true,
       },
+      {
+        source: '/discord-time-tag',
+        destination: '/discord-timestamp',
+        permanent: true,
+      },
     ];
   },
 };

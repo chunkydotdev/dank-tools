@@ -4,9 +4,9 @@ export const routes = {
     href: "/",
     dark: false,
   },
-  discordTimeTag: {
-    name: "Discord Time Tag",
-    href: "/discord-time-tag",
+  discordTimestamp: {
+    name: "Discord Timestamp",
+    href: "/discord-timestamp",
     dark: true,
   },
   svgPathLengthCalculator: {

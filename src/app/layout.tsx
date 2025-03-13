@@ -26,7 +26,8 @@ export const metadata: Metadata = {
     "web tools",
     "developer utilities",
     "svg calculator",
-    "discord time tag",
+    "discord timestamp generator",
+    "discord time tag"
   ],
   authors: [
     {

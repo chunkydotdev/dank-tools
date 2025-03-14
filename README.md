@@ -1,4 +1,3 @@
-
 # Dev Tools
 
 A collection of useful developer tools and utilities built with Next.js 14, TypeScript, and Tailwind CSS.
@@ -11,11 +10,21 @@ Calculate the total length of SVG paths. Useful for SVG animations and manipulat
 - Real-time path length calculations
 - Support for multiple paths within a single SVG
 
-### Discord Time Tag Generator
-Generate Discord-style time tags for your messages.
+### Discord Timestamp Generator
+Generate Discord timestamps that show the correct local time for every user.
 - Easy-to-use interface for selecting dates and times
+- Multiple timestamp format options (short time, long date, relative time)
 - Preview of how the timestamp will appear in Discord
 - Copy-to-clipboard functionality
+
+### Simple Poll
+Create and share polls with customizable options and end dates.
+- Create polls with multiple options
+- Set custom end dates and times
+- Optional voter identification
+- Real-time results with visual charts
+- Shareable links for easy distribution
+- Voting timeline analytics
 
 ## Tech Stack
 
@@ -42,31 +51,3 @@ npm install
 ```bash
 yarn install
 ```
-
-```bash
-pnpm install
-```
-
-3. Run the development server:
-
-```bash
-npm run dev
-```
-
-```bash
-yarn dev
-```
-
-```bash
-pnpm dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

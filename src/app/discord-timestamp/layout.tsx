@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Discord Timestamp Generator | Create Time Stamps for Discord",
+    title: "Discord Timestamp Generator",
     description:
       "Generate Discord timestamps that show correct local time for every user. Create time stamps, timers, and formatted dates for Discord messages.",
     images: ["/og-image.png"],

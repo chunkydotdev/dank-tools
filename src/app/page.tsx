@@ -53,7 +53,14 @@ export default function Home() {
               <span className="text-navy-900">Tools</span>
             </h1>
             <p className="text-gray-600 text-center md:text-left">
-              A collection of chunkydotdev&apos;s free and open-source tools.
+              A collection of chunkydotdev&apos;s free and{" "}
+              <Link
+                href="https://github.com/chunkydotdev/dank-tools"
+                className="text-primary-500 underline"
+              >
+                open-source
+              </Link>{" "}
+              tools.
             </p>
           </div>
           <div className="relative w-80 h-80 xl:w-96 xl:h-96 flex-shrink-0 order-1 md:order-2">

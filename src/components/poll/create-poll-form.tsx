@@ -47,6 +47,7 @@ export function CreatePollForm() {
 
       if (!response.ok) throw new Error("Failed to create poll");
       const data = await response.json();
+      window.plausible?.("poll-created");
       router.push(`/simple-poll/${data.id}`);
     } catch (error) {
       console.error("Error creating poll:", error);

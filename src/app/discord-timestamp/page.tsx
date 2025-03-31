@@ -20,6 +20,7 @@ export default function DiscordTime() {
     const tag = format.replace("{{time}}", timestamp);
     await navigator.clipboard.writeText(tag);
     setCopiedIndex(index);
+    window.plausible?.("discord-timestamp-copied");
     setTimeout(() => setCopiedIndex(null), 2000);
   };
 

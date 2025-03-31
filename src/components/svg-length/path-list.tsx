@@ -21,6 +21,7 @@ export function PathList({ paths }: PathListProps) {
   const handleCopy = async (length: number, index: number) => {
     await navigator.clipboard.writeText(length.toString());
     setCopiedIndex(index);
+    window.plausible?.("svg-path-length-copied");
     setTimeout(() => setCopiedIndex(null), 2000);
   };
 

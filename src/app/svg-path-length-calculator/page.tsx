@@ -36,6 +36,7 @@ export default function SVGLength() {
     setSVG(svgString);
     const pathLengths = calculatePathLengths(svgString);
     setPaths(pathLengths);
+    window.plausible?.("svg-uploaded");
   };
 
   return (

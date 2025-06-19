@@ -83,7 +83,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en">t
 			<body className={`relative ${poppins.variable} font-sans`}>
 				<Background />
 				<Navigation />

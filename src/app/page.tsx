@@ -46,6 +46,13 @@ const projects: Tool[] = [
 		url: "https://chunky.dev",
 	},
 	{
+		icon: "/bldbl.png",
+		title: "Buildable",
+		description: "Build your SaaS faster with MCP-powered tasks",
+		date: "June 2025",
+		url: "https://bldbl.dev",
+	},
+	{
 		icon: "/happypanda.svg",
 		title: "Happy Panda",
 		description: "Automated feedback widget for your website",
